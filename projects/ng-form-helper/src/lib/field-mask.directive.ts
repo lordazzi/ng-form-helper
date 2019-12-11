@@ -3,7 +3,7 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FormFieldDirective } from './form-field.directive';
 
 @Directive({
-  selector: '[formFieldMask][ngModel], [formFieldMask][formControlName]',
+  selector: '[formFieldMask]',
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

@@ -35,6 +35,7 @@ export abstract class FormFieldDirective implements OnInit, ControlValueAccessor
   writeValue(value: string): void {
     const normalizedValue = value == null ? '' : value;
     this.oldState.value = normalizedValue;
+    this.onChange(value);
     this.renderer.setProperty(this.element.nativeElement, 'value', normalizedValue);
   }
 
@@ -60,7 +61,6 @@ export abstract class FormFieldDirective implements OnInit, ControlValueAccessor
   }
 
   updateFieldValue(value: string): void {
-    this.onChange(value);
     this.writeValue(value);
     this.oldState.value = value;
   }
