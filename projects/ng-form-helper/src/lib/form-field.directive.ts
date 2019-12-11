@@ -6,10 +6,10 @@ export abstract class FormFieldDirective implements OnInit, ControlValueAccessor
   protected abstract element: ElementRef;
   protected abstract renderer: Renderer2;
 
-  protected oldState: { cursorStart: number; cursorEnd: number; value: any } = {
+  protected oldState: { cursorStart: number; cursorEnd: number; value: string } = {
     cursorStart: 0,
     cursorEnd: 0,
-    value: null
+    value: ''
   };
 
   //  These are for angular use

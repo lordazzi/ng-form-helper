@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '9'
+sudo: required
+addons:
+  chrome: stable
+cache:
+  directories:
+  - node_modules
+before_install:
+- npm install -g typescript && tsc -v
+- npm install -g karma
+- npm install -g @angular/cli@7.3.9
+install:
+- npm install
+script:
+- npm run test ng-form-helper
+- npm run lint ng-form-helper
+- npm run build ng-form-helper
