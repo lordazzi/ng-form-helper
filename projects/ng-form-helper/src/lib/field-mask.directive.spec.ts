@@ -42,7 +42,7 @@ describe('[FieldMaskDirective]', () => {
 
     const renderer: any = {
       setProperty: (el: HTMLInputElement, attr: string, value: string) => {
-        el[attr] = value;
+        (el as any)[attr] = value;
       }
     };
 

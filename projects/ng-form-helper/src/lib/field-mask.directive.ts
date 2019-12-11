@@ -21,7 +21,7 @@ export class FieldMaskDirective extends FormFieldDirective implements OnInit {
   private readonly MASK_MUST_FINISH_WITH_A_NUMBER = /\d$/;
 
   private generatedMaskConfig: {
-    [maxLength: number]: {
+    [maxLength: string]: {
       valueStructure: RegExp;
       maskStructure: string;
     }
@@ -68,6 +68,13 @@ export class FieldMaskDirective extends FormFieldDirective implements OnInit {
     } = {};
 
     const decomposeGivenMask = formFieldMask.match(/(9+|[^9]+)/g);
+    if (!decomposeGivenMask) {
+      throw new Error(
+        `Can't generate mask: "${formFieldMask}". Invalid format found.
+        You must have at least one 9 character in the mask.`
+      );
+    }
+
     const isNumeric = /^\d+$/;
     let composeMask = '';
     let numberMapper = '';
@@ -101,7 +108,7 @@ export class FieldMaskDirective extends FormFieldDirective implements OnInit {
   } {
     const lengths = Object.keys(this.generatedMaskConfig);
     let length = lengths.find(maxLength => currentValue.length <= Number(maxLength));
-    length = length || lengths.pop();
+    length = length || lengths.pop() || '';
     const maskConfig = this.generatedMaskConfig[length];
 
     return {

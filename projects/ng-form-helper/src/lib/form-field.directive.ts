@@ -13,10 +13,9 @@ export abstract class FormFieldDirective implements OnInit, ControlValueAccessor
   };
 
   //  These are for angular use
-  // tslint:disable-next-line:variable-name
-  protected _onChange = (...arg: any[]) => void (0);
-  // tslint:disable-next-line:variable-name
-  protected _onTouch = () => void (0);
+  protected isDisabled = false;
+  protected onChange = (...arg: any[]) => void (0);
+  protected onTouch = () => void (0);
 
   ngOnInit(): void {
     this.oldState.value = this.element.nativeElement.value;
@@ -30,13 +29,18 @@ export abstract class FormFieldDirective implements OnInit, ControlValueAccessor
 
   @HostListener('blur')
   onBlur(): void {
-    this._onTouch();
+    this.onTouch();
   }
 
   writeValue(value: string): void {
     const normalizedValue = value == null ? '' : value;
     this.oldState.value = normalizedValue;
     this.renderer.setProperty(this.element.nativeElement, 'value', normalizedValue);
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    this.renderer.setProperty(this.element.nativeElement, 'disabled', isDisabled);
+    this.isDisabled = isDisabled;
   }
 
   protected getValueFromKeyboardEvent(event: KeyboardEvent): string {
@@ -50,22 +54,22 @@ export abstract class FormFieldDirective implements OnInit, ControlValueAccessor
   }
 
   resetField(): void {
-    this._onChange(this.oldState.value);
+    this.onChange(this.oldState.value);
     this.writeValue(this.oldState.value);
     this.setCursorPosition(this.oldState.cursorStart, this.oldState.cursorEnd);
   }
 
   updateFieldValue(value: string): void {
-    this._onChange(value);
+    this.onChange(value);
     this.writeValue(value);
     this.oldState.value = value;
   }
 
   registerOnChange(fn: (...arg: any[]) => undefined): void {
-    this._onChange = fn;
+    this.onChange = fn;
   }
 
   registerOnTouched(fn: () => undefined): void {
-    this._onTouch = fn;
+    this.onTouch = fn;
   }
 }

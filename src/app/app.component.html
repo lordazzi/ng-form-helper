@@ -1,12 +1,18 @@
+<h2>formFieldMask with the value: (99) 9999-9999</h2>
+
 <input
   type="text"
   formFieldMask="(99) 9999-9999"
-  [ngModel]="mascarado"
+  [ngModel]="masked"
 />
 
+"{{masked}}"
+
+<h2>formRegexedField with the value: ^\d{{0,3}$</h2>
 
 <input
   type="text"
   formRegexedField="^\d{0,3}$"
   [ngModel]="regexed"
 />
+"{{regexed}}"
