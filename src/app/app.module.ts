@@ -15,6 +15,8 @@ import { AppComponent } from './app.component';
     FormHelperModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

@@ -13,8 +13,7 @@ import { InputRegexDirective } from './input-regex.directive';
   ],
   exports: [
     FieldMaskDirective,
-    InputRegexDirective,
-    FormsModule
+    InputRegexDirective
   ]
 })
 export class FormHelperModule { }
