@@ -1,6 +1,29 @@
 {
   "name": "ng-form-helper",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "description": "Feature set to use in your angular form",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lordazzi/ng-form-helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lordazzi/ng-form-helper/issues"
+  },
+  "homepage": "https://github.com/lordazzi/ng-form-helper#readme",
+  "keywords": [
+    "angular",
+    "angular7",
+    "angular8",
+    "ng7",
+    "ng8",
+    "typescript",
+    "ecmascript",
+    "javascript",
+    "form",
+    "formulario"
+  ],
+  "author": "Ricardo Azzi Silva",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0",
