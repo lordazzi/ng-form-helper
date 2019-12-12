@@ -3,7 +3,11 @@ node_js:
 - '9'
 sudo: required
 addons:
-  chrome: stable
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 cache:
   directories:
   - node_modules
@@ -14,6 +18,6 @@ before_install:
 install:
 - npm install
 script:
-- npm run test ng-form-helper
+- npm run test ng-form-helper --watch=false --no-progress --browsers=ChromeHeadless
 - npm run lint ng-form-helper
 - npm run build ng-form-helper
