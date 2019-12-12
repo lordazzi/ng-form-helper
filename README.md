@@ -2,6 +2,10 @@
 
 This is a simple mask lib with two single directives: a directive to allow field data entry from being just characters mapped by a regular expression and a directive to mask values, it works exclusively for numeric values.
 
+[![npm version](https://badge.fury.io/js/ng-form-helper.svg)](https://badge.fury.io/js/ng-form-helper)
+[![Build Status](https://travis-ci.org/lordazzi/ng-form-helper.svg?branch=master)](https://travis-ci.org/lordazzi/ng-form-helper)
+[![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/lordazzi/ng-form-helper/blob/documentation/LICENSE)
+
 ## Overview
 ![Example](./ng-form-helper.gif)
 https://lordazzi.github.io/ng-form-helper/
