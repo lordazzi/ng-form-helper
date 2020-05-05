@@ -50,8 +50,12 @@ export abstract class FormFieldDirective implements OnInit, ControlValueAccessor
   }
 
   protected setCursorPosition(start: number, end = start): void {
-    this.element.nativeElement.selectionStart = start;
-    this.element.nativeElement.selectionEnd = end;
+    const el = this.element.nativeElement;
+    const type = el.getAttribute('type');
+    el.setAttribute('type', 'text');
+    el.selectionStart = start;
+    el.selectionEnd = end;
+    el.setAttribute('type', type);
   }
 
   resetField(): void {

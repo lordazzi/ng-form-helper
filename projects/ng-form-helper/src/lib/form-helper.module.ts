@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FieldMaskDirective } from './field-mask.directive';
-import { InputRegexDirective } from './input-regex.directive';
+import { RegexedFieldDirective } from './regexed-field.directive';
 
 @NgModule({
   imports: [
@@ -9,11 +9,11 @@ import { InputRegexDirective } from './input-regex.directive';
   ],
   declarations: [
     FieldMaskDirective,
-    InputRegexDirective
+    RegexedFieldDirective
   ],
   exports: [
     FieldMaskDirective,
-    InputRegexDirective
+    RegexedFieldDirective
   ]
 })
 export class FormHelperModule { }

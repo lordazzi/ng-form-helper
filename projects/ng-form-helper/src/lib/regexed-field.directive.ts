@@ -7,12 +7,12 @@ import { FormFieldDirective } from './form-field.directive';
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => InputRegexDirective),
+      useExisting: forwardRef(() => RegexedFieldDirective),
       multi: true
     }
   ]
 })
-export class InputRegexDirective extends FormFieldDirective {
+export class RegexedFieldDirective extends FormFieldDirective {
 
   @Input('formRegexedField')
   set setRegex(regex: string) {
