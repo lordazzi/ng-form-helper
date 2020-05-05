@@ -1,4 +1,5 @@
-# Form Helper, for Angular application (for version 7 or over)
+# Form Helper
+## For Angular application (version 7 or over)
 > angulo formularia adjuntor
 
 This is a simple mask lib with two single directives: a directive to allow field data entry from being just characters mapped by a regular expression and a directive to mask values, it works exclusively for numeric values.
