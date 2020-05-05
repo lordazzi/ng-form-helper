@@ -11,10 +11,9 @@
   },
   "homepage": "https://github.com/lordazzi/ng-form-helper#readme",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
+    "test": "ng test --watch=false --no-progress --browsers=ChromeHeadless",
     "lint": "ng lint"
   },
   "keywords": [

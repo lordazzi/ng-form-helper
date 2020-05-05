@@ -18,6 +18,5 @@ before_install:
 install:
 - npm install
 script:
-- ng test ng-form-helper --watch=false --no-progress --browsers=ChromeHeadless
-- npm run lint ng-form-helper
-- npm run build ng-form-helper
+- npm run lint
+- npm run build
