@@ -64,7 +64,9 @@ export class AppModule { }
 **The regexed field:**
 ```html
 <input
-  type="number"
+  type="text"
+  pattern="[0-9]*"
+  inputmode="numeric"
   formRegexedField="^\d{0,5}$"
   [(ngModel)]="regexed"
 />

@@ -121,6 +121,12 @@ export class FieldMaskDirective extends FormFieldDirective implements OnInit {
   @HostListener('input', ['$event'])
   onInput(event: KeyboardEvent): void {
     const currentMaskedValue = this.getValueFromKeyboardEvent(event);
+    //  this validation is here for IE11 or lower... it emmits the input event for anything
+    //  and create a loop
+    if (currentMaskedValue === this.oldState.value) {
+      return;
+    }
+
     const currentValue = currentMaskedValue.replace(/[^0-9]/g, '');
     const maskConfig = this.getPartialMask(currentValue);
 
